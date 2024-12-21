@@ -11,8 +11,9 @@ RUN pip install --no-cache-dir -r requirements.txt && \
 COPY . .
 
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup && \
-    chown -R appuser:appgroup /app
+    chown -R appuser:appgroup /app && \
+    chmod +x init_db.sh
 
 USER appuser
 
-CMD ["python", "app.py"]
+CMD ["sh", "-c", "sh /app/init_db.sh"]
