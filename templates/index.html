@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список Задач</title>
+</head>
+<body>
+    <h1>Список Задач</h1>
+    <form action="/add_task" method="POST">
+        <input type="text" name="task_name" placeholder="Имя задачи">
+        <button type="submit">Добавить задачу</button>
+    </form>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task.name }} <a href="/delete_task/{{ task.id }}">Удалить</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
