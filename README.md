@@ -7,8 +7,7 @@
 Для запуска приложения необходимо совершить следующие команды:
 
 ```
-$ git clone https://github.com/gevoup/lab_docker.git
-$ cd lab_docker
+$ git clone https://github.com/gevoup/lab_docker.git && cd lab_docker/
 $ docker-compose up --build
 ```
 
